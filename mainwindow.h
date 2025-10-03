@@ -9,6 +9,7 @@
 #include <QMenuBar>
 #include <QAction>
 #include <QFileDialog>
+#include <QMessageBox>
 
 class MainWindow: public QMainWindow {
     Q_OBJECT

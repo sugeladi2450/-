@@ -12,8 +12,12 @@ int State::getV(int i, int j) {
 
 int State::applySteps() {
     //TODO: 请在此添加你的代码
-
-    return 0;
+    for(int i = 0; i < steps.size(); i++){
+        if(i < steps.size()){
+            swap(getStepRow(i), getStepCol(i));
+        }
+    }
+    return point;
 
 }
 
@@ -55,18 +59,21 @@ void State::readFromFile(QString fileName) {
 
 }
 
-int State::getN(){
-    return n;
-}
-
 void State::eliminate(){
-    QVector<QVector<bool>> b(n, QVector<bool>(n, false));
+    toEliminate.clear();
+    toEliminate.resize(n);
+    for(int i = 0; i < n; i++){
+        toEliminate[i].resize(n);
+        for(int j = 0; j < n; j++){
+            toEliminate[i][j] = false;
+        }
+    }
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n - 2; j++){
             if(board[i][j] != 0 && board[i][j] == board[i][j + 1] && board[i][j + 1] == board[i][j + 2]){
-                b[i][j] = true;
-                b[i][j + 1] = true;
-                b[i][j + 2] = true;
+                toEliminate[i][j] = true;
+                toEliminate[i][j + 1] = true;
+                toEliminate[i][j + 2] = true;
 
             }
         }
@@ -75,17 +82,28 @@ void State::eliminate(){
     for(int i = 0; i < n - 2; i++){
         for(int j = 0; j < n; j++){
             if(board[i][j] != 0 && board[i][j] == board[i + 1][j] && board[i + 1][j] == board[i + 2][j]){
-                b[i][j] = true;
-                b[i + 1][j] = true;
-                b[i + 2][j] = true;
+                toEliminate[i][j] = true;
+                toEliminate[i + 1][j] = true;
+                toEliminate[i + 2][j] = true;
 
+            }
+        }
+    }
+
+    QVector<QVector<bool>> visited(n, QVector<bool>(n, false));
+
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(toEliminate[i][j] && !visited[i][j]){
+                point += 3 + (canConnected(i, j, visited) - 3) * 2;
             }
         }
     }
 
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
-            if(b[i][j]){
+            if(toEliminate[i][j]){
                 board[i][j] = 0;
             }
         }
@@ -123,4 +141,47 @@ int State::getStepRow(int step){
 
 int State::getStepCol(int step){
     return steps[step].second;
+}
+
+int State::canConnected(int i, int j, QVector<QVector<bool>>& visited){
+    int count = 0;
+    if(i < 0 || j < 0 || i >= n || j >= n){
+        return 0;
+    }
+    if(board[i][j] == 0){
+        return 0;
+    }
+    if(visited[i][j]){
+        return 0;
+    }
+    if(toEliminate[i][j]){
+        count = 1;
+    }
+    visited[i][j] = true;
+    if(i + 1 < n && board[i + 1][j] == board[i][j]){
+        count += canConnected(i + 1, j, visited);
+        visited[i + 1][j] = true;
+    }
+    if(j + 1 < n && board[i][j + 1] == board[i][j]){
+        count += canConnected(i, j + 1, visited);
+        visited[i][j + 1] = true;
+    }
+    if(i - 1 >= 0 && board[i - 1][j] == board[i][j]){
+        count += canConnected(i - 1, j, visited);
+        visited[i - 1][j] = true;
+    }
+    if(j - 1 >= 0 && board[i][j - 1] == board[i][j]){
+        count += canConnected(i, j - 1, visited);
+        visited[i][j - 1] = true;
+    }
+    return count;
+}
+
+void State::clear(){
+    n = 0;
+    left = 0;
+    point = 0;
+    step = 0;
+    steps.clear();
+    board.clear();
 }

@@ -14,12 +14,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
 }
 
-MainWindow::~MainWindow() {}
+MainWindow::~MainWindow() {
+    state.clear();
+}
 
 void MainWindow::paintEvent(QPaintEvent* event){
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     int n = state.getN();
+    if(n <= 0) {
+        return;
+    }
 
     int cellWidth = width() / n;
     int cellHeight = height() / n;
@@ -39,16 +44,12 @@ void MainWindow::paintEvent(QPaintEvent* event){
 
             painter.fillRect(j * cellWidth, (n - 1 - i) * cellHeight, cellWidth, cellHeight, cellColor);
 
-
-            // 设置字体
             painter.setPen(Qt::black);
             painter.setFont(QFont("Arial", 14));
 
-            // 计算文本的居中位置
             QString text = QString::number(value);
             QRect rect = painter.boundingRect(j * cellWidth, (n - 1 - i) * cellHeight, cellWidth, cellHeight, Qt::AlignCenter, text);
 
-            // 绘制文本，使其居中
             painter.drawText(rect, Qt::AlignCenter, text);
         }
     }
@@ -65,40 +66,34 @@ void MainWindow::paintEvent(QPaintEvent* event){
 
 }
 
-int step = 0;
+
 void MainWindow::keyPressEvent(QKeyEvent* event){
     switch(event->key()){
     case Qt::Key_S:
-        if(step < state.getLeft()){
-            state.swap(state.getStepRow(step),state.getStepCol(step));
+        if(state.step < state.stepsNum()){
+            state.swap(state.getStepRow(state.step),state.getStepCol(state.step));
             update();
-            step++;
-            break;
+            state.step++;
         }
-
+        break;
+    case Qt::Key_R:
+        QMessageBox::information(this, "Message", QString("Point: %1").arg(state.point));
+        break;
     }
-
 }
 
 void MainWindow::readFile(){
-    // 这里是“读取文件”的逻辑，示例：打开文件选择对话框
     QString filePath = QFileDialog::getOpenFileName(
         this,
-        "Read File",          // 对话框标题
-        "C:/Users/Administrator/Desktop/sep/input",                   // 默认打开路径（空表示当前工作目录）
-        "Text Files (*.txt);;Image Files (*.png *.jpg *.jpeg);;All Files (*)"  // 文件类型过滤
+        "Read File",
+        "C:/Users/Administrator/Desktop/sep/input",
+        "Text Files (*.txt);;Image Files (*.png *.jpg *.jpeg);;All Files (*)"
         );
 
     if (!filePath.isEmpty()) {
-        qDebug() << "Selected file:" << filePath;
-        // TODO: 在这里添加“读取文件内容并更新界面”的逻辑
-        // 例如：解析文件内容，刷新棋盘颜色和数字
+        state.clear();
+        state.readFromFile(filePath);
+        update();
     } else {
-        qDebug() << "File selection canceled.";
     }
-
-    state.readFromFile(filePath);
-    step = 0;
-    update();
 }
-

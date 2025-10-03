@@ -9,7 +9,6 @@ private:
     //请使用这四个变量存储State状态
     int n; // 棋盘行列数
     int left; // 剩余步数
-    int point = 0;
     QVector<QVector<int>> board; // 棋盘状态
     QVector<QPair<int, int>> steps; // 剩余移动步骤
 public:
@@ -17,17 +16,24 @@ public:
     int getV(int i, int j); // 安全地访问board的第i行和第j列的元素
     int applySteps(); // 移动所有的步骤，并返回得分，和更新board
     void readFromFile(QString fileName); // 读取文件
-    int getN();
+    int getN(){
+        return n;
+    }
     void eliminate();
+    QVector<QVector<bool>> toEliminate;
     void swap(int i, int j);
     int getStepRow(int step);
     int getStepCol(int step);
     int getLeft(){
         return left;
-    };
-    int getPoint(){
-        return point;
     }
+    int stepsNum(){
+        return steps.size();
+    }
+    int point = 0;
+    int canConnected(int i, int j, QVector<QVector<bool>>& visited);
+    int step = 0;
+    void clear();
 };
 
 #endif // STATE_H
