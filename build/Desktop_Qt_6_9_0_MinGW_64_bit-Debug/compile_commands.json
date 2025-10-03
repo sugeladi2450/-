@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/Administrator/Desktop/sep/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug",
+  "command": "C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DSOURCE_DIR=\\\"C:/Users/Administrator/Desktop/sep\\\" -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Users/Administrator/Desktop/sep/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sep2024-template_autogen/include -isystem C:/Qt/6.9.0/mingw_64/include/QtCore -isystem C:/Qt/6.9.0/mingw_64/include -isystem C:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.0/mingw_64/include/QtGui -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles\\sep2024-template.dir\\sep2024-template_autogen\\mocs_compilation.cpp.obj -c C:\\Users\\Administrator\\Desktop\\sep\\build\\Desktop_Qt_6_9_0_MinGW_64_bit-Debug\\sep2024-template_autogen\\mocs_compilation.cpp",
+  "file": "C:\\Users\\Administrator\\Desktop\\sep\\build\\Desktop_Qt_6_9_0_MinGW_64_bit-Debug\\sep2024-template_autogen\\mocs_compilation.cpp",
+  "output": "CMakeFiles\\sep2024-template.dir\\sep2024-template_autogen\\mocs_compilation.cpp.obj"
+},
+{
+  "directory": "C:/Users/Administrator/Desktop/sep/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug",
+  "command": "C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DSOURCE_DIR=\\\"C:/Users/Administrator/Desktop/sep\\\" -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Users/Administrator/Desktop/sep/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sep2024-template_autogen/include -isystem C:/Qt/6.9.0/mingw_64/include/QtCore -isystem C:/Qt/6.9.0/mingw_64/include -isystem C:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.0/mingw_64/include/QtGui -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles\\sep2024-template.dir\\main.cpp.obj -c C:\\Users\\Administrator\\Desktop\\sep\\main.cpp",
+  "file": "C:\\Users\\Administrator\\Desktop\\sep\\main.cpp",
+  "output": "CMakeFiles\\sep2024-template.dir\\main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Administrator/Desktop/sep/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug",
+  "command": "C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DSOURCE_DIR=\\\"C:/Users/Administrator/Desktop/sep\\\" -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Users/Administrator/Desktop/sep/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sep2024-template_autogen/include -isystem C:/Qt/6.9.0/mingw_64/include/QtCore -isystem C:/Qt/6.9.0/mingw_64/include -isystem C:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.0/mingw_64/include/QtGui -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles\\sep2024-template.dir\\mainwindow.cpp.obj -c C:\\Users\\Administrator\\Desktop\\sep\\mainwindow.cpp",
+  "file": "C:\\Users\\Administrator\\Desktop\\sep\\mainwindow.cpp",
+  "output": "CMakeFiles\\sep2024-template.dir\\mainwindow.cpp.obj"
+},
+{
+  "directory": "C:/Users/Administrator/Desktop/sep/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug",
+  "command": "C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DSOURCE_DIR=\\\"C:/Users/Administrator/Desktop/sep\\\" -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Users/Administrator/Desktop/sep/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sep2024-template_autogen/include -isystem C:/Qt/6.9.0/mingw_64/include/QtCore -isystem C:/Qt/6.9.0/mingw_64/include -isystem C:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.0/mingw_64/include/QtGui -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles\\sep2024-template.dir\\state.cpp.obj -c C:\\Users\\Administrator\\Desktop\\sep\\state.cpp",
+  "file": "C:\\Users\\Administrator\\Desktop\\sep\\state.cpp",
+  "output": "CMakeFiles\\sep2024-template.dir\\state.cpp.obj"
+},
+{
+  "directory": "C:/Users/Administrator/Desktop/sep/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug",
+  "command": "C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DSOURCE_DIR=\\\"C:/Users/Administrator/Desktop/sep\\\" -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Users/Administrator/Desktop/sep/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/sep2024-template_autogen/include -isystem C:/Qt/6.9.0/mingw_64/include/QtCore -isystem C:/Qt/6.9.0/mingw_64/include -isystem C:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.0/mingw_64/include/QtGui -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles\\sep2024-template.dir\\test.cpp.obj -c C:\\Users\\Administrator\\Desktop\\sep\\test.cpp",
+  "file": "C:\\Users\\Administrator\\Desktop\\sep\\test.cpp",
+  "output": "CMakeFiles\\sep2024-template.dir\\test.cpp.obj"
+}
+]
